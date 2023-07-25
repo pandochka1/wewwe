@@ -1,0 +1,183 @@
+// цвета в переменных
+@green: rgb(22, 130, 10); 
+@blue: rgb(190, 247, 255);
+
+// св-ва в переменной
+@h1_size: 32pt;
+@pad: 50px;
+@border: 3px double rgb(240, 5, 181);
+
+// помещение Селекторов в переменную
+
+@nav: navigation; 
+
+
+
+// h1{
+//     color: @green;
+//     font-size: @h1_size;
+//     border: @border;
+//     padding: @pad;
+
+//     span{
+//         text-decoration: underline;
+//         font-style: italic;
+//         // background-color: @blue;
+//         padding: @pad;
+//     }
+// }
+
+
+
+.@{nav}{
+    height: 500px;
+}
+
+
+#@{nav}{
+    width: 800px;
+}
+
+
+
+// градиенты
+
+@color1: rgb(15, 209, 235);
+@color2: rgb(251, 68, 98);
+@color3: rgb(36, 229, 117);
+
+@color4: white;
+@color4_1: rgba(255, 255, 255, 0.5);
+@color5: #aaaaaa;
+@color5_1: rgba(170, 170, 170, 0.5);
+
+
+/* https://www.colorzilla.com/gradient-editor/ */
+/* https://ru.pngtree.com/so/pattern */
+
+// h1{
+// background: rgb(254,204,177);
+// background: -moz-radial-gradient(center, ellipse cover,  rgb(254,204,177) 0%, rgb(241,116,50) 57%, rgb(251,149,94) 100%);
+// background: -webkit-radial-gradient(center, ellipse cover,  rgb(254,204,177) 0%,rgb(241,116,50) 57%,rgb(251,149,94) 100%);
+// background: radial-gradient(ellipse at center,  rgb(254,204,177) 0%,rgb(241,116,50) 57%,rgb(251,149,94) 100%);
+
+// }
+
+// с помощью ключевых слов to top, to right, to bottom, to left, которые соответствуют углу градиента, равному 0deg, 90deg, 180deg и 270deg соответственно.
+
+
+h1 { 
+    height: 200px;
+
+    // линейный градиент
+    // background: linear-gradient(130deg, @color1, @color2);
+    // background: linear-gradient(to bottom, @color2, @color1);
+    background: linear-gradient(to top, @color1 20%, @color2 80%);
+
+    // ----------------------------------------------------------------------------------
+
+
+    // Для чёткого распределения цветных полос каждый последующий цвет нужно начинать с точки остановки предыдущего цвета:
+
+    // background: linear-gradient(to right, @color1 20%, @color2 20%, @color3 80%, @color1 80%);
+
+
+    // ----------------------------------------------------------------------------------
+
+    // радиальный градиент
+    // background: radial-gradient(@color1, @color2);
+
+
+    // Форма градиента определяется ключевыми словами circle или ellipse. Если форма не задана, по умолчанию радиальный градиент принимает форму эллипса.
+    // background: radial-gradient(at bottom, @color1, @color2);
+    // background: radial-gradient(30% 60%, @color1, @color2);
+    // background: radial-gradient(ellipse farthest-corner at 10px 50px, @color1, @color2);
+
+    // кросбраузерный градиент
+    
+    // background: @color1;
+    // background: -moz-linear-gradient(left,  @color1 0%,  @color2 100%);  //мозила
+    // background: -webkit-linear-gradient(left,  @color1 0%,  @color2 100%); //сафари
+    // background: linear-gradient(to right,  @color1 0%,  @color2 100%); //стандартный синтаксис
+    // background: -o-radial-gradient(@color1, @color2); //опера
+}
+
+// вложенные блоки 
+
+.wrap {
+    height: 200px;
+    padding: 50px 0;
+    background: rgb(210, 208, 208);
+
+    .button {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto; 
+
+        background: radial-gradient(farthest-side ellipse at top left, @color4, @color5);
+
+        box-shadow: 5px 10px 20px @color5_1,  -5px -10px 20px @color4_1;
+        // , -5px -10px 20px @color4_1;
+        cursor: pointer;
+    }
+}
+
+
+
+.hyperlink{
+    display: flex;
+    gap: 50px;
+
+    a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+
+        &:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgb(251, 4, 140);
+        }
+    }
+}
+    
+
+
+
+
+
+// примиси
+.link {
+    #navigation;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+
+        a{
+            text-decoration: none;
+            color: black;
+
+                &:hover{
+                    color: @color4;
+                }
+        }
+}
+
+#navigation{
+    background-color: palevioletred;
+    display: block;
+    // width: 100%;
+    margin: auto;
+}
+
+// .hyper{
+    // .link();
+    // .link;
+
+        // &:extend(.link);
+        // color: rgb(255, 145, 0);
+
+    // .link;
+    // #navigation;
+// }
+// 

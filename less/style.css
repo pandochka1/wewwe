@@ -1,0 +1,59 @@
+.navigation {
+  height: 500px;
+}
+#navigation {
+  width: 800px;
+}
+/* https://www.colorzilla.com/gradient-editor/ */
+/* https://ru.pngtree.com/so/pattern */
+h1 {
+  height: 200px;
+  background: linear-gradient(to top, #0fd1eb 20%, #fb4462 80%);
+}
+.wrap {
+  height: 200px;
+  padding: 50px 0;
+  background: #d2d0d0;
+}
+.wrap .button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: radial-gradient(farthest-side ellipse at top left, white, #aaaaaa);
+  box-shadow: 5px 10px 20px rgba(170, 170, 170, 0.5), -5px -10px 20px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.hyperlink {
+  display: flex;
+  gap: 50px;
+}
+.hyperlink a {
+  text-decoration: none;
+  color: #000000;
+}
+.hyperlink a:hover {
+  color: #ffffff;
+  background-color: #fb048c;
+}
+.link {
+  width: 800px;
+  background-color: palevioletred;
+  display: block;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.link a {
+  text-decoration: none;
+  color: black;
+}
+.link a:hover {
+  color: white;
+}
+#navigation {
+  background-color: palevioletred;
+  display: block;
+  margin: auto;
+}
